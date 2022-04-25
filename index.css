@@ -1,0 +1,800 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --fontColor : rgb(240, 235, 235);
+    --backColor : rgb(19, 18, 18);
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: var(--backColor);
+    user-select: none;
+    position: relative;
+}
+/*container*/
+#container{
+    width: 100%;
+    height: 100%;
+}
+/*MenuContainer*/
+#MenuContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 6em;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    z-index: 99999;
+    transition: 300ms all;
+    -webkit-transition: 300ms all;
+    -moz-transition: 300ms all;
+    -ms-transition: 300ms all;
+    -o-transition: 300ms all;
+}
+/*MenuLogoName*/
+#MenuLogoName{
+    width: 8em;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 5em;
+}
+#MenuLogo{
+    width: 100%;
+    height: 45%;
+}
+#MenuLogo img{
+    width: 100%;
+    height: 100%;
+}
+/*Menuİnformations*/
+#Menuİnformations{
+    width: 25em;
+    height: 100%;
+    margin-right: 3em;
+}
+#MenuUl{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#MenuUl li{
+    background-color: var(--fontColor);
+    color: var(--backColor);
+    padding: 7px 27px;
+    cursor: pointer;
+    position: relative;
+    top: -100px;
+    font-size: 0.9em;
+    clip-path: polygon(91% 0, 86% 13%, 100% 8%, 100% 100%, 83% 100%, 8% 100%, 19% 84%, 0 93%, 0% 35%, 0 0);
+    transition: 500ms all;
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    -ms-transition: 500ms all;
+    -o-transition: 500ms all;
+}
+#MenuUl li:hover{
+    clip-path: polygon(91% 0, 100% 0, 100% 9%, 100% 100%, 83% 100%, 8% 100%, 0 100%, 0 93%, 0% 35%, 0 0);
+}
+/*CharacterContainer*/
+#CharacterContainer{
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+/*AvangersBackColor*/
+#AvangersBackColor{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15em;
+    background-image: linear-gradient(to bottom,transparent ,var(--backColor));
+}
+/*AvengersBack*/
+#AvengersBack{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 200px;
+    opacity: 0;
+    transition: 500ms all;
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    -ms-transition: 500ms all;
+    -o-transition: 500ms all;
+}
+#AvengersBack p{
+    font-size: 11em;
+    font-variant: small-caps;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    letter-spacing: -10px;
+    -webkit-text-stroke: 2px white;
+    background-image: url(./img/Logo-Background/marvelback.jpg);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0.3;
+}
+/*videoCap*/
+#videoCap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -999;
+}
+#videoCap video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*CharacterSContainer*/
+#CharacterSContainer{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#CharactersCap{
+    width: 25em;
+    height: 25em;
+    position: absolute;
+    clip-path: polygon(80% 0, 75% 9%, 100% 5%, 90% 85%, 100% 100%, 20% 99%, 25% 89%, 0 95%, 10% 14%, 0 0);
+    transition: 300ms all;
+    -webkit-transition: 300ms all;
+    -moz-transition: 300ms all;
+    -ms-transition: 300ms all;
+    -o-transition: 300ms all;
+    z-index: 99;
+}
+#CharcterCard{
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+}
+#CharcterCard::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 100ms all;
+    -webkit-transition: 100ms all;
+    -moz-transition: 100ms all;
+    -ms-transition: 100ms all;
+    -o-transition: 100ms all;
+}
+#CharcterCard:hover::before{
+    background-color: rgba(255, 255, 255, 0.151);
+}
+#AvangersLogoH{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    width: 20%;
+    height: 20%;
+}
+#AvangersLogoH img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#CharcterCard:nth-child(1){
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    clip-path: polygon(100% 1%, 0 0, 50% 100%);
+    background-image: url(./img/Hulk-Thor-SpiderMan-IronMan/hulk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+#CharcterCard:nth-child(2){
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background-color: black;
+    background-image: url(./img/Hulk-Thor-SpiderMan-IronMan/iron-man.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#CharcterCard:nth-child(3){
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(100% 100%, 50% 0, 0 100%);
+    background-image: url(./img/Hulk-Thor-SpiderMan-IronMan/örümcek-adam.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+#CharcterCard:nth-child(4){
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    clip-path: polygon(100% 100%, 100% 0, 0 50%);
+    background-color: black;
+    background-image: url(./img/Hulk-Thor-SpiderMan-IronMan/thor.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*CharactersAllContainer*/
+#CharactersAllContainer{
+    width: 100%;
+    height: 100%;
+}
+/*CharacterContainerHÖAT*/
+.CharacterContainerHÖAT{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding-top: 6em;
+    position: relative;
+}
+/*****Hulk SpiderMan IronMan Thor*****/
+/*******CharcterAll********/
+/*CharcterLeft*/
+.CharcterLeft{
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+/*CharcterRight*/
+.CharcterRight{
+    width: 75%;
+    height: 100%;
+    position: relative;
+}
+/*CharcterLeft*/
+#HulkLeft{
+    background-color: rgb(36, 107, 36);
+}
+#IronManRight{
+    background-color: #8E7E5C;
+}
+#SpiderManLeft{
+    background-color: rgb(218, 29, 29);
+}
+#ThorRight{
+    background-color: rgb(78, 145, 233);
+}
+/*CharcterImg*/
+.CharcterImg{
+    position: absolute;
+    z-index: 1;
+    transition: 500ms all;
+    -webkit-transition: 500ms all;
+    -moz-transition: 500ms all;
+    -ms-transition: 500ms all;
+    -o-transition: 500ms all;
+}
+.CharcterImg img{
+    width: 100%;
+    height: 100%;
+}
+/*CharcterImg*/
+#HulkBackImg{
+    left: 20%;
+    top: 10%;
+    width: 20em;
+    height: 30em;
+    opacity: 0;
+}
+#SpiderManImg{
+    left: 20%;
+    top: 10%;
+    width: 9em;
+    height: 30em;
+    opacity: 0;
+}
+#IronManBackImg{
+    right: 20%;
+    top: 10%;
+    width: 16em;
+    height: 30em;
+    opacity: 0;
+}
+#ThorBackImg{
+    right: 20%;
+    top: 10%;
+    width: 18em;
+    height: 30em;
+    opacity: 0;
+}
+/*CharcterTitle*/
+.CharcterTitle{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}
+#HulkTitle p{
+    color: rgb(36, 107, 36);
+    text-shadow: 
+    1px 1px 0px rgb(19, 63, 19),
+    2px 2px 0px rgb(19, 63, 19),
+    3px 3px 0px rgb(19, 63, 19),
+    4px 4px 0px rgb(19, 63, 19),
+    5px 5px 0px rgb(19, 63, 19);
+}
+#ThorTitle p{
+    color: rgb(78, 145, 233);
+    text-shadow: 
+    1px 1px 0px rgb(10, 66, 139),
+    2px 2px 0px rgb(10, 66, 139),
+    3px 3px 0px rgb(10, 66, 139),
+    4px 4px 0px rgb(10, 66, 139),
+    5px 5px 0px rgb(10, 66, 139);
+}
+#SpiderManTitle p{
+    color: rgb(218, 29, 29);
+    text-shadow: 
+    1px 1px 0px rgb(117, 16, 16),
+    2px 2px 0px rgb(117, 16, 16),
+    3px 3px 0px rgb(117, 16, 16),
+    4px 4px 0px rgb(117, 16, 16),
+    5px 5px 0px rgb(117, 16, 16);
+}
+#IronManTitle p{
+    color: #8E7E5C;
+    text-shadow: 
+    1px 1px 0px #6b5320,
+    2px 2px 0px #6b5320,
+    3px 3px 0px #6b5320,
+    4px 4px 0px #6b5320,
+    5px 5px 0px #6b5320;
+}
+/*CharcterMain*/
+.CharcterMain{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*CharcterMainCap*/
+.CharcterMainCap{
+    width: 25em;
+    height: 30em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    clip-path: polygon(90% 0, 85% 15%, 100% 10%, 100% 90%, 80% 90%, 90% 100%, 0 100%, 0 10%, 20% 5%, 10% 0);
+}
+#HulkMainCap{
+    background-color: rgb(36, 107, 36);
+}
+#ThorMainCap{
+    background-color: rgb(78, 145, 233);
+}
+#SpiderManMainCap{
+    background-color: rgb(218, 29, 29);
+}
+#IronManMainCap{
+    background-color: #8E7E5C;
+}
+/*CharcterTitleBold*/
+.CharcterTitleBold{
+    width: 80%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color:white;
+    text-shadow:
+    1px 1px 1px rgb(34, 33, 33),
+    2px 2px 1px rgb(34, 33, 33),
+    3px 3px 1px rgb(34, 33, 33),
+    4px 4px 1px rgb(34, 33, 33),
+    5px 5px 1px rgb(34, 33, 33);
+}
+/*CharcterTitleThin*/
+.CharcterTitleThin{
+    width: 80%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color:white;
+    text-shadow:
+    1px 1px 1px rgb(34, 33, 33),
+    2px 2px 1px rgb(34, 33, 33),
+    3px 3px 1px rgb(34, 33, 33),
+    4px 4px 1px rgb(34, 33, 33),
+    5px 5px 1px rgb(34, 33, 33);
+}
+/*CharcterText*/
+.CharcterText{
+    width: 90%;
+    height: 75%;
+    color:white;
+    line-height: 23px;
+}
+
+/*footer*/
+#footer{
+    width: 100%;
+    background-image: url(./img/Logo-Background/AvengersStation_Background_Wide-scaled.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
+    padding-bottom: 50px;
+}
+/*footerTitle*/
+#footerTitle{
+    width: 100%;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+#footerMarvelLogo{
+    width: 15em;
+    height: 3em;
+    margin-right: 50px;
+}
+#footerDisneyLogo{
+    width: 7em;
+    height: 3em;
+}
+#footerMarvelLogo img,
+#footerDisneyLogo img{
+    width: 100%;
+    height: 100%;
+}
+/*Footer Main*/
+#footerMain{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#footerMainCap{
+    width: 20em;
+    height: 5em;
+    background-color: var(--backColor);
+    display: flex;
+    border-radius: 30px 0 30px 0;
+    -webkit-border-radius: 30px 0 30px 0;
+    -moz-border-radius: 30px 0 30px 0;
+    -ms-border-radius: 30px 0 30px 0;
+    -o-border-radius: 30px 0 30px 0;
+    overflow: hidden;
+    transition: 200ms all;
+    -webkit-transition: 200ms all;
+    -moz-transition: 200ms all;
+    -ms-transition: 200ms all;
+    -o-transition: 200ms all;
+    cursor: pointer;
+    margin: 30px 0;
+}
+#footerMainCapİmg{
+    width: 30%;
+    height: 100%;
+}
+#footerMainCapİmg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#footerMainCapName{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    color: var(--fontColor);
+}
+#footerMainCap:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+/*Responsive Code*/
+#MenuResponsiveContainer{
+    display: none;
+    width: 25em;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+#MenuResponsiveButton{
+    width: 4em;
+    height: 3em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+#MenuResponsiveButton div{
+    width: 80%;
+    height: 15%;
+    background-color: var(--fontColor);
+    clip-path: polygon(80% 5%, 100% 0, 95% 20%, 100% 70%, 100% 100%, 20% 95%, 0 100%, 5% 80%, 0% 35%, 0 0);
+    transition: 200ms all;
+    -webkit-transition: 200ms all;
+    -moz-transition: 200ms all;
+    -ms-transition: 200ms all;
+    -o-transition: 200ms all;
+}
+.button1{
+    transform: rotate(45deg) translate(3px,15px);
+    -webkit-transform: rotate(45deg) translate(3px,15px);
+    -moz-transform: rotate(45deg) translate(3px,15px);
+    -ms-transform: rotate(45deg) translate(3px,15px);
+    -o-transform: rotate(45deg) translate(3px,15px);
+}
+.button2{
+    opacity: 0;
+}
+.button3{
+    transform: rotate(-45deg) translate(3px,-17px);
+    -webkit-transform: rotate(-45deg) translate(3px,-17px);
+    -moz-transform: rotate(-45deg) translate(3px,-17px);
+    -ms-transform: rotate(-45deg) translate(3px,-17px);
+    -o-transform: rotate(-45deg) translate(3px,-17px);
+}
+#MenuResponsiveUl{
+    background-color: var(--backColor);
+    position: fixed;
+    width: 100%;
+    height: 15em;
+    left: 0;
+    top: 6em;
+    z-index: 999999;
+    transition: 200ms all;
+    -webkit-transition: 200ms all;
+    -moz-transition: 200ms all;
+    -ms-transition: 200ms all;
+    -o-transition: 200ms all;
+}
+.MenuResponsiveUlAdd{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.MenuResponsiveUlRemove{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+#MenuResponsiveUl ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+#MenuResponsiveUl ul li{
+    width: 80%;
+    height: 3em;
+    background-color: var(--fontColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    clip-path: polygon(80% 5%, 100% 0, 95% 20%, 100% 70%, 100% 100%, 20% 95%, 0 100%, 5% 80%, 0% 35%, 0 0);
+    transition: 200ms all;
+    -webkit-transition: 200ms all;
+    -moz-transition: 200ms all;
+    -ms-transition: 200ms all;
+    -o-transition: 200ms all;
+}
+#MenuResponsiveUl ul li:hover{
+    clip-path: polygon(81% 0, 100% 0, 100% 21%, 100% 70%, 100% 100%, 22% 100%, 0 100%, 0 78%, 0% 35%, 0 0);
+}
+/*Responsive*/
+@media screen and (min-width:768px) and (max-width:991px){
+    
+    /*Menu*/
+    #MenuUl{
+        display: none;
+    }
+    #MenuResponsiveContainer{
+        display: flex;
+        width: 20em;
+    }
+    #MenuLogoName{
+        margin-left: 5em;
+        width: 8em;
+    }
+    #Menuİnformations{
+        margin-right: 1em;;
+    }
+
+    /*Avangers Back*/
+    #AvengersBack p{
+        font-size: 9em;
+    }
+
+    /*CharcterLeft*/
+    .CharcterLeft{
+        display: none;
+    }
+    .CharcterRight{
+        width: 100%;
+    }
+
+    /*BackCapImg*/
+    .BackCapImg{
+        display: flex;
+    }
+
+    /*Footer*/
+    #footer{
+        clip-path: polygon(25% 3%, 75% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+    #footerTitle{
+        margin-top: 50px;
+    }
+
+}
+@media screen and (min-width:576px) and (max-width:767px){
+
+    /*Menu*/
+    #MenuUl{
+        display: none;
+    }
+    #MenuResponsiveContainer{
+        display: flex;
+        width: 20em;
+    }
+    #MenuLogoName{
+        margin-left: 3em;
+        width: 8em;
+    }
+    #Menuİnformations{
+        margin-right: -2em;
+    }
+    
+    /*Avangers Back*/
+    #AvengersBack p{
+        font-size: 7em;
+    }
+
+    /*CharcterLeft*/
+    .CharcterLeft{
+        display: none;
+    }
+    .CharcterRight{
+        width: 100%;
+    }
+
+    /*BackCapImg*/
+    .BackCapImg{
+        display: flex;
+    }
+
+    /*Footer*/
+    #footer{
+        clip-path: polygon(25% 3%, 75% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+
+    #footerTitle{
+        margin-top: 50px;
+    }
+
+}
+@media screen and (max-width:575px){
+
+    /*Menu*/
+    #MenuUl{
+        display: none;
+    }
+    #MenuResponsiveContainer{
+        display: flex;
+        width: 15em;
+    }
+    #MenuLogoName{
+        margin-left: 1em;
+        width: 8em;
+    }
+    #Menuİnformations{
+        margin-right: -9em;
+    }
+
+    /*Avangers Back*/
+    #AvengersBack p{
+        font-size: 5em;
+    }
+
+    /*CharcterLeft*/
+    .CharcterLeft{
+        display: none;
+    }
+    .CharcterRight{
+        width: 100%;
+    }
+
+    /*CharcterTitle*/
+    .CharcterTitle{
+        font-size: 3em;
+        height: 15%;
+    }
+    /*CharcterMainCap*/
+    .CharcterMainCap{
+        width: 23em;
+        height: 100%;
+    }
+
+    /*CharcterMain*/
+    .CharcterMain{
+        width: 100%;
+        height: 85%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*Footer*/
+    #footer{
+        clip-path: polygon(25% 1%, 75% 1%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+
+    #footerTitle{
+        margin-top: 50px;
+    }
+
+    #footerMarvelLogo{
+        width: 12em;
+        height: 3em;
+        margin-right: 20px;
+    }
+    #footerDisneyLogo{
+        width: 5em;
+        height: 3em;
+    }
+}
+
